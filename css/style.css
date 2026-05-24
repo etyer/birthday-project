@@ -44,7 +44,8 @@ body {
     pointer-events: none;
     user-select: none;
 
-    margin-top: 20px;
+    position: relative;
+    top: -80px;
 }
 
 /* =======================
@@ -407,3 +408,4 @@ body {
         max-height: 70%;
     }
 }
+
