@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="index-body">
+
+    <!-- TITLE -->
+    <div class="container">
+        <img src="assets/images/title.png" class="title">
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="buttons">
+
+        <!-- START -->
+        <button class="btn start-btn"
+            onclick="location.href='page2.html'">
+        </button>
+
+        <!-- SETTINGS -->
+        <button class="btn settings-btn"
+            onclick="openSettings()">
+        </button>
+
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div id="settingsPanel" class="panel hidden">
+
+    <div class="settings-box">
+
+        <button class="close-btn" onclick="closeSettings()"></button>
+
+        <img src="assets/images/settings_title.png" class="settings-title">
+        
+         <div class="settings-content">
+            <img src="assets/images/rules.png" class="rules-image">
+           
+        </div>
+
+    </div>
+
+</div>
+    <!-- AUDIO -->
+    <audio id="musicPlayer"></audio>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

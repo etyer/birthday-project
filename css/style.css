@@ -1,0 +1,392 @@
+@font-face {
+    font-family: "MyHandwriting";
+    src: url("../assets/fonts/myfont.ttf");
+}
+
+body {
+    font-family: "MyHandwriting";
+}
+
+.speech-text {
+    font-family: "MyHandwriting";
+}
+
+.index-body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url("../assets/images/bg.jpg")
+    no-repeat center center/cover;
+}
+
+.container {
+    
+    background-image: url("../assets/images/settings.png");
+    position: absolute;
+    top: 3%;
+    left: 1%;
+    text-align: left;
+}
+
+.title {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+
+    width: 450px; /* istediğin boyut */
+    height: auto;
+
+    pointer-events: none; /* 🔥 tıklanamaz yapar */
+    user-select: none;    /* seçilemez */
+}
+
+.buttons {
+    position: absolute;
+    left: 10%;
+    top: 55%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+/* GENEL BUTON SIFIR (artık görsel kullanacağız) */
+.btn {
+    width: 200px;
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    background-color: transparent; /* 🔥 en kritik satır */
+
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* hover efekti tüm butonlara */
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.settings-btn {
+    background-image: url("../assets/images/settings.png");
+}
+
+.start-btn {
+    background-image: url("../assets/images/start.png");
+}
+
+.start-btn:hover {
+    background-image: url("../assets/images/start_hover.png");
+}
+
+.settings-btn:hover {
+    background-image: url("../assets/images/settings_hover.png");
+}
+.panel {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-box {
+    position: relative;
+
+    width: 800px;
+    height: 500px;
+
+    background: black;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* TITLE */
+.settings-title {
+    position: absolute;
+    top: 30px;
+
+    width: 550px;
+
+    pointer-events: none;
+}
+
+.settings-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.rules-image {
+    max-width: 90%;
+    max-height: 90%;
+
+    opacity: 0;
+    transform: scale(0.95);
+
+    transition: opacity 1s ease, transform 1s ease;
+}
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+
+    width: 140px;
+    height: 80px;
+
+    background: url("../assets/images/close.png");
+    background-size: cover;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+/* HOVER EFFECT */
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+.close-btn:hover {
+    background: url("../assets/images/close_hover.png");
+    background-size: cover;
+}
+
+.PAGE2 {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: black;
+    color: white;
+}
+
+/* ANA GÖRSEL */
+.image {
+    width: 350px;   /* 🔥 BURADAN BÜYÜTÜRSÜN */
+    height: auto;
+    border-radius: 15px;
+}
+
+.heart {
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    pointer-events: none;
+
+    animation: fadeHeart 1s forwards;
+}
+
+@keyframes fadeHeart {
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+/* TEXT GÖRSELİ */
+.text-image {
+    width: 350px;   /* 🔥 BURASI SENİN TITLE / TEXT GÖRSELİN */
+    height: auto;
+
+    pointer-events: none;
+    user-select: none;
+
+    margin-top: 20px;
+}
+
+.next-btn {
+    width: 140px;
+    height: 50px;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    background-image: url("../assets/images/next.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-color: white; /* yuvarlak zemin */
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+    display: block;
+}
+
+.next-btn:hover {
+    transform: scale(1.1);
+}
+
+.speech-body{ 
+    margin: 0;
+    height: 100vh;
+
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speech-container {
+    width: 70%;
+    text-align: center;
+}
+
+.speech-text {
+    font-size: 20px;
+    line-height: 1.6;
+
+    position: relative;
+    animation: scrollUp 8s linear forwards;
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#gameBtn {
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.2);
+    color: white;
+
+    transition: 0.3s;
+}
+
+#gameBtn.show {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+#gameBtn:hover {
+    background: rgb(196, 41, 41);
+    color: black;
+    transform: scale(1.1);
+}
+
+.game-body {
+    margin: 0; 
+    height: 100vh;
+
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameWrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+#gameCanvas {
+    background-image: url("../assets/images/chess_bg.png");
+    background-size: 100% 100%;  /* 🔥 kritik */
+    background-repeat: no-repeat;
+}
+
+#startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+#score {
+    position: absolute;
+    top: -30px;
+    left: 0;
+
+    color: white;
+    font-size: 20px;
+
+    z-index: 3;
+}
